@@ -1,0 +1,498 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: #C5E4E7;
+  height: 100vh;
+  position: relative;
+}
+
+title {
+  display: inline-block;
+  color: #446366;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.6rem;
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.tracker__wrapper {
+  height: 100%;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tracker__wrapper .tracker {
+  width: 800px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 1.2rem;
+  padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tracker__wrapper .tracker .tracker__main {
+  width: 46%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tracker__wrapper .tracker .tracker__main .label {
+  color: #707C7C;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__bill {
+  width: 90%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__bill #bill {
+  border-radius: 0.4rem;
+  border: 2px solid transparent;
+  width: 95%;
+  outline: none;
+  text-align: right;
+  font-size: 2rem;
+  font-family: inherit;
+  color: #003636;
+  font-weight: 700;
+  background-color: #F3F8FB;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__bill #bill:focus {
+  border: 2px solid #5FABA1;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__bill .bill__dollar {
+  position: absolute;
+  display: block;
+  top: 52%;
+  left: 5%;
+  pointer-events: none;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__bill .bill__dollar img {
+  width: 11px;
+  height: 17px;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (90px)[3];
+      grid-template-columns: repeat(3, 90px);
+  -ms-grid-rows: 50px 50px;
+      grid-template-rows: 50px 50px;
+  grid-gap: 20px;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .active-tip {
+  background-color: #9DE9DF !important;
+  color: #00474B !important;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__tip {
+  cursor: pointer;
+  border-radius: 0.3rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #00474B;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__tip:hover {
+  background-color: #9DE9DF;
+  color: #00474B;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input {
+  width: 90px;
+  height: 50px;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input {
+  padding: 0;
+  border: 2px solid transparent;
+  outline: none;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  text-align: right;
+  font-weight: 700;
+  background: #F3F8FB;
+  width: 100%;
+  height: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input:focus {
+  border: 2px solid #5FABA1;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input::-webkit-input-placeholder {
+  font-family: 'Space Mono';
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input:-ms-input-placeholder {
+  font-family: 'Space Mono';
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input::-ms-input-placeholder {
+  font-family: 'Space Mono';
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__select .select__input input::placeholder {
+  font-family: 'Space Mono';
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__people {
+  width: 90%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__people #people {
+  border-radius: 0.4rem;
+  width: 95%;
+  border: 2px solid transparent;
+  outline: none;
+  text-align: right;
+  font-size: 2rem;
+  font-family: inherit;
+  color: #003636;
+  font-weight: 700;
+  background-color: #F3F8FB;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__people #people:focus {
+  border: 2px solid #5FABA1;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__people .people__person {
+  position: absolute;
+  display: block;
+  top: 52%;
+  left: 5%;
+  pointer-events: none;
+}
+
+.tracker__wrapper .tracker .tracker__main .tracker__people .people__person img {
+  width: 15px;
+  height: 17px;
+}
+
+.tracker__wrapper .tracker .tracker__total {
+  width: 46%;
+  height: 100%;
+  background-color: #00474B;
+  border-radius: 0.7rem;
+  padding: 0 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tracker__wrapper .tracker .tracker__total .amount__label {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.tracker__wrapper .tracker .tracker__total .amount__label span {
+  font-weight: normal;
+  color: #729BA1;
+}
+
+.tracker__wrapper .tracker .tracker__total .amount__amount {
+  color: #26C2AD;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.tracker__wrapper .tracker .tracker__total .total__amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tracker__wrapper .tracker .tracker__total .total__total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.tracker__wrapper .tracker .tracker__total .total__reset {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-top: 100px;
+  background-color: #26C2AD;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #00474B;
+  text-transform: uppercase;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.tracker__wrapper .tracker .tracker__total .total__reset:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 840px) {
+  body {
+    height: auto;
+  }
+  body .tracker__wrapper .tracker {
+    margin: 90px 0 30px;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+    -webkit-box-align: initial;
+        -ms-flex-align: initial;
+            align-items: initial;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body .tracker__wrapper .tracker .tracker__main {
+    height: 400px;
+    width: 100%;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__bill {
+    width: 100%;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__select {
+    margin: 0 auto;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__select .select__input {
+    width: 90px;
+    height: 50px;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__people {
+    width: 100%;
+  }
+  body .tracker__wrapper .tracker .tracker__total {
+    height: 210px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 30px;
+    padding: 2rem;
+    width: auto;
+  }
+  body .tracker__wrapper .tracker .tracker__total .total__reset {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  body .tracker__wrapper .tracker {
+    padding: 1.5rem;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__select {
+    grid-gap: 10px;
+    -ms-grid-columns: (90px)[2];
+        grid-template-columns: repeat(2, 90px);
+    -ms-grid-rows: 40px 40px 40px;
+        grid-template-rows: 40px 40px 40px;
+  }
+  body .tracker__wrapper .tracker .tracker__main .tracker__select .select__input {
+    width: 90px;
+    height: 40px;
+  }
+  body .tracker__wrapper .tracker .tracker__total .amount__label {
+    font-size: 0.8rem;
+  }
+  body .tracker__wrapper .tracker .tracker__total .amount__amount {
+    font-size: 1.8rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

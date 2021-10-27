@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Tracker</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <title>Splitter</title>
+    <main class="tracker__wrapper">
+        <div class="tracker">
+            <form class="tracker__main">
+                <div class="tracker__bill">
+                    <label class="label" for="bill">Bill</label>
+                    <input type="number" id="bill" min="0">
+                    <div class="bill__dollar">
+                        <img src="img/icon-dollar.svg" alt="dollar" aria-label="none">
+                    </div>
+                </div>
+                <label class="label" for="select">Select Tip %</label>
+                <div class="tracker__select" id="select">
+                    <div class="select__tip">5%</div>
+                    <div class="select__tip">10%</div>
+                    <div class="select__tip">15%</div>
+                    <div class="select__tip">25%</div>
+                    <div class="select__tip">50%</div>
+                    <div class="select__input">
+                        <input type="number" id="custom" placeholder="Custom">
+                    </div>
+                </div>
+                <div class="tracker__people">
+                    <label class="label" for="people">Number of People</label>
+                    <input type="number" min="1" id="people">
+                    <div class="people__person">
+                        <img src="img/icon-person.svg" aria-label="none" alt="person">
+                    </div>
+                </div>
+            </form>
+            <div class="tracker__total">
+                <div class="total__amount">
+                    <p class="amount__label">Tip Amount<br><span>/ person</span></p>
+                    <p class="amount__amount"></p>
+                </div>
+                <div class="total__total">
+                    <p class="amount__label">Total<br><span>/ person</span></p>
+                    <p class="amount__amount"></p>
+                </div>
+                <button class="total__reset" id="reset" type="reset">Reset</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
